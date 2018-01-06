@@ -5,6 +5,8 @@
  */
 package controllers;
 
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.sql.Date;
@@ -19,7 +21,7 @@ import views.ViewDetalleCompra;
  *
  * @author ninte
  */
-public class ControllerCompra {
+public class ControllerCompra implements FocusListener {
     private ModelCompra mCompra;
     private ViewCompra vCompra;
     private ViewPrincipal vPrincipal;
@@ -34,18 +36,31 @@ public class ControllerCompra {
     }
     public void initView(){
         Agregar();
-        mCompra.llenarcombo(vCompra.jcmb_proveedor);
     }
     
     public void Agregar(){
-        vCompra.jbtn_nueva.addActionListener(e->jbtn_nuevo_Click());
+        vCompra.addFocusListener(this);
+        vCompra.jbtn_nueva.addActionListener(a->jbtn_nuevo_Click());
     }
     
     public void jbtn_nuevo_Click(){
         mCompra.setIdproveedor(vCompra.jcmb_proveedor.getSelectedIndex());
         mCompra.setFecha_compra(java.sql.Date.valueOf(vCompra.jTextField1.getText()));
+        mCompra.InsertarCompra();
         vPrincipal.setContentPane(vDetalleC);
         vPrincipal.revalidate();
         vPrincipal.repaint();
+        vDetalleC.requestFocusInWindow();
+    }
+
+    @Override
+    public void focusGained(FocusEvent e) {
+        vCompra.jTextField1.setText("");
+        mCompra.LlenarCombo(vCompra.jcmb_proveedor);
+    }
+
+    @Override
+    public void focusLost(FocusEvent e) {
+        
     }
 }

@@ -35,7 +35,6 @@ public class ViewPrincipal extends javax.swing.JFrame {
         jmi_con_compra = new javax.swing.JMenuItem();
         jmi_compra = new javax.swing.JMenuItem();
         jmi_detalleCompras = new javax.swing.JMenuItem();
-        jmi_detalleCompra = new javax.swing.JMenuItem();
         jmi_detalleVentas = new javax.swing.JMenuItem();
         jmi_empleados = new javax.swing.JMenuItem();
         jmi_productos = new javax.swing.JMenuItem();
@@ -79,10 +78,6 @@ public class ViewPrincipal extends javax.swing.JFrame {
             }
         });
         jm_menu.add(jmi_detalleCompras);
-
-        jmi_detalleCompra.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 12)); // NOI18N
-        jmi_detalleCompra.setText("Detalle Compra");
-        jm_menu.add(jmi_detalleCompra);
 
         jmi_detalleVentas.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 12)); // NOI18N
         jmi_detalleVentas.setText("Detalle de Venta");
@@ -172,7 +167,6 @@ public class ViewPrincipal extends javax.swing.JFrame {
     public javax.swing.JMenuItem jmi_clientes;
     public javax.swing.JMenuItem jmi_compra;
     public javax.swing.JMenuItem jmi_con_compra;
-    public javax.swing.JMenuItem jmi_detalleCompra;
     public javax.swing.JMenuItem jmi_detalleCompras;
     public javax.swing.JMenuItem jmi_detalleVentas;
     public javax.swing.JMenuItem jmi_empleados;

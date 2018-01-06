@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package controllers;
-import models.ModelPrincipal;
 import views.*;
 import models.*;
 /**
@@ -44,9 +43,6 @@ public class ControllerPrincipal {
     private ViewCompra vCompra;
     private ModelCompra mCompra;
     private ControllerCompra cCompra;
-    private ViewDetalleCompra vDetalleC;
-    private ModelDetalleCompra mDetalleC;
-    private ControllerDetalleCompra cDetalleC;
     
     public ControllerPrincipal(Object models[], Object views[], Object controllers[]){
         this.mPrincipal = (ModelPrincipal)models[0];
@@ -81,9 +77,6 @@ public class ControllerPrincipal {
         this.vCompra = (ViewCompra)views[10];
         this.mCompra = (ModelCompra)models[10];
         this.cCompra = (ControllerCompra)controllers[10];
-        this.vDetalleC = (ViewDetalleCompra)views[11];
-        this.mDetalleC = (ModelDetalleCompra)models[11];
-        this.cDetalleC = (ControllerDetalleCompra)controllers[11];
         initView();
     }
     public void initView(){
@@ -98,7 +91,6 @@ public class ControllerPrincipal {
         vPrincipal.jmi_compra.setVisible(false);
         vPrincipal.jmi_con_compra.setVisible(false);
         vPrincipal.jmi_detalleCompras.setVisible(false);
-        vPrincipal.jmi_detalleCompra.setVisible(false);
         vPrincipal.jmi_detalleVentas.setVisible(false);
         vPrincipal.jmi_empleados.setVisible(false);
         vPrincipal.jmi_productos.setVisible(false);
@@ -114,7 +106,6 @@ public class ControllerPrincipal {
         vPrincipal.jmi_detalleCompras.addActionListener(e->jmi_detalleCompras_click());
         vPrincipal.jmi_detalleVentas.addActionListener(e->jmi_detalleVentas_click());
         vPrincipal.jmi_compra.addActionListener(e->jmi_compra_click());
-        vPrincipal.jmi_detalleCompra.addActionListener(e->jmi_detalleCompra_click());
     }
     public void jmi_inicio_click(){
         vPrincipal.setContentPane(vLogin);
@@ -165,10 +156,6 @@ public class ControllerPrincipal {
         vPrincipal.setContentPane(vCompra);
         vPrincipal.revalidate();
         vPrincipal.repaint();
-    }
-    public void jmi_detalleCompra_click(){
-        vPrincipal.setContentPane(vDetalleC);
-        vPrincipal.revalidate();
-        vPrincipal.repaint();
+        vCompra.requestFocusInWindow();
     }
 }

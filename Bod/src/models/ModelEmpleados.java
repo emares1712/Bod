@@ -39,7 +39,7 @@ public class ModelEmpleados {
     
     private void Connect(){
         try{
-            sql_connection = DriverManager.getConnection("jdbc:mysql://localhost/Bodega","root","1234");
+            sql_connection = DriverManager.getConnection("jdbc:mysql://localhost/Bodega","root","");
             sql_st = sql_connection.createStatement();
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null, "Error 107: No hay conexión con la base de datos: " + e);

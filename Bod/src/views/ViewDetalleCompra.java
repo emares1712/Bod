@@ -41,6 +41,8 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
         jbtn_quitar = new javax.swing.JButton();
         jl_total = new javax.swing.JLabel();
         jtf_total = new javax.swing.JTextField();
+        jbtn_aceptar = new javax.swing.JButton();
+        jbtn_cancelar = new javax.swing.JButton();
 
         jl_producto.setText("Producto");
 
@@ -81,6 +83,10 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
 
         jtf_total.setEnabled(false);
 
+        jbtn_aceptar.setText("Aceptar");
+
+        jbtn_cancelar.setText("Cancelar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,22 +110,27 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
                     .addComponent(jtf_cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24))
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jbtn_agregar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jbtn_quitar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jl_total)
-                        .addGap(101, 101, 101))
+                        .addGap(24, 24, 24)
+                        .addComponent(jbtn_agregar))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtf_total, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())))
+                        .addGap(150, 150, 150)
+                        .addComponent(jbtn_aceptar)
+                        .addGap(47, 47, 47)
+                        .addComponent(jbtn_cancelar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane2)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jbtn_quitar)
+                        .addGap(295, 295, 295)
+                        .addComponent(jl_total)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jtf_total, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,7 +156,11 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
                     .addComponent(jbtn_quitar)
                     .addComponent(jl_total)
                     .addComponent(jtf_total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbtn_aceptar)
+                    .addComponent(jbtn_cancelar))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -156,7 +171,9 @@ public class ViewDetalleCompra extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JButton jbtn_aceptar;
     public javax.swing.JButton jbtn_agregar;
+    public javax.swing.JButton jbtn_cancelar;
     public javax.swing.JButton jbtn_quitar;
     public javax.swing.JComboBox<String> jcmb_producto;
     public javax.swing.JLabel jl_cantidad;

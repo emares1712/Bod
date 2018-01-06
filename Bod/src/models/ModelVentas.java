@@ -37,7 +37,7 @@ public class ModelVentas {
     private TableModel modelo;
     private void Connect(){
         try{
-            sql_connection = DriverManager.getConnection("jdbc:mysql://localhost/Bodega","root","1234");
+            sql_connection = DriverManager.getConnection("jdbc:mysql://localhost/Bodega","root","");
             sql_st = sql_connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null, "Error 119: No hay conexión con la base de datos: " + e);

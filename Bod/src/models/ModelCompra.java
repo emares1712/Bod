@@ -13,8 +13,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
-import javax.swing.table.TableModel;
-import net.proteanit.sql.DbUtils;
 import java.sql.Date;
 import models.ModelPrincipal;
 
@@ -23,54 +21,34 @@ import models.ModelPrincipal;
  * @author ninte
  */
 public class ModelCompra{
-    private ModelPrincipal mPrincipal;
     private Connection sql_connection;
     private Statement sql_st;
     private PreparedStatement sql_ps;
     private ResultSet sql_rs;
     private String sql;
+    
     private List listaidProveedor = new List();
     private String idproveedor;
     private java.sql.Date fecha_compra;
-
-    public ModelCompra(ModelPrincipal mPrincipal){
-        this.mPrincipal = mPrincipal;
-    }
-    public Date getFecha_compra() {
-        return fecha_compra;
-    }
-
+    
     public void setFecha_compra(Date fecha_compra) {
         this.fecha_compra = fecha_compra;
-        mPrincipal.setFecha(fecha_compra);
-        System.out.println(mPrincipal.getFecha());
-    }
-
-    public String getIdproveedor() {
-        return idproveedor;
     }
 
     public void setIdproveedor(int posicion) {
         idproveedor = "" + listaidProveedor.getItem(posicion);
-        mPrincipal.setTexto(idproveedor);
-        System.out.println(mPrincipal.getTexto());
-
     }
-    
-    public TableModel getModelo() {
-        return modelo;
-    }
-    private TableModel modelo;
     
     private void Connect(){
         try{
-            sql_connection = DriverManager.getConnection("jdbc:mysql://localhost/Bodega","root","1234");
+            sql_connection = DriverManager.getConnection("jdbc:mysql://localhost/Bodega","root","");
             sql_st = sql_connection.createStatement();
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null, "Error 125: No hay conexión con la base de datos: " + e);
         }
     }
-    public void llenarcombo(javax.swing.JComboBox jcmb_proveedor){
+    
+    public void LlenarCombo(javax.swing.JComboBox jcmb_proveedor){
         try{
         Connect();
         sql = "Select ProveedoresID, Nombre_Proveedor from Proveedores Order by ProveedoresID ASC";
@@ -83,6 +61,19 @@ public class ModelCompra{
         }
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null, "Error 701: No se ha llenado el combo: " + e);
+        }
+    }
+    
+    public void InsertarCompra(){
+        try{
+            sql = "Insert into Compra(ProveedoresID, Fecha_Compra) Values(?, ?);";
+            sql_ps = sql_connection.prepareStatement(sql);
+            sql_ps.setString(1, idproveedor);
+            sql_ps.setDate(2, fecha_compra);
+            sql_ps.executeUpdate();
+        }
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "Error 720: No se ha llenado el combo: " + e);
         }
     }
 }

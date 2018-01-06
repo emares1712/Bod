@@ -22,7 +22,7 @@ public class Main {
         ModelCompras    mCompras = new ModelCompras();
         ModelVentas     mVentas = new ModelVentas();
         ModelDetalleCompras     mDetalle = new ModelDetalleCompras();
-        ModelCompra     mCompra = new ModelCompra(mPrincipal);
+        ModelCompra     mCompra = new ModelCompra();
         ModelDetalleCompra     mDetalleC = new ModelDetalleCompra(mPrincipal);
         
         ViewLogin vLogin = new ViewLogin();

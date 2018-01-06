@@ -24,33 +24,12 @@ public class ModelPrincipal {
     private String sql;
     private MessageDigest md5;
     private StringBuilder string_builder;
-
-    public String getTexto() {
-        return Texto;
-    }
-
-    public void setTexto(String Texto) {
-        this.Texto = Texto;
-    }
-
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
+    private String idcompra;
     
-    private String Texto;
-    private java.sql.Date fecha;
-    
-   
-   
-   
     public void Connect(){
         try {
             // Aquí habías colocado una línea de más que sólo se usa con el driver de PostgreSQL.
-            sql_connection = DriverManager.getConnection("jdbc:mysql://localhost/Bodega","root","1234");
+            sql_connection = DriverManager.getConnection("jdbc:mysql://localhost/Bodega","root","");
             sql_st = sql_connection.createStatement();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error 001: Conexion con la base de datos: " + e);
@@ -160,6 +139,7 @@ public class ModelPrincipal {
     public void setSql(String sql) {
         this.sql = sql;
     }
+
     public StringBuilder getString_builder() {
         return string_builder;
     }
@@ -167,11 +147,21 @@ public class ModelPrincipal {
     public void setString_builder(StringBuilder string_builder) {
         this.string_builder = string_builder;
     }
-    public MessageDigest getMD5(){
-       return md5;
-   }
-    
-   public void  setMD5(MessageDigest md5){
-       this.md5 = md5;
-   }
+
+    public MessageDigest getMD5() {
+        return md5;
+    }
+
+    public void setMD5(MessageDigest md5) {
+        this.md5 = md5;
+    }
+
+    public String getIdcompra() {
+        return idcompra;
+    }
+
+    public void setIdcompra(String idcompra) {
+        this.idcompra = idcompra;
+    }
+     
 }

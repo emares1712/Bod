@@ -54,7 +54,6 @@ public class ControllerLogin {
             vPrincipal.jmi_proveedores.setVisible(true);
             vPrincipal.jmi_ventas.setVisible(true);
             vPrincipal.jmi_compra.setVisible(true);
-            vPrincipal.jmi_detalleCompra.setVisible(true);
         }
         else{
             vPrincipal.jm_menu.setVisible(false);
@@ -67,7 +66,6 @@ public class ControllerLogin {
             vPrincipal.jmi_proveedores.setVisible(false);
             vPrincipal.jmi_ventas.setVisible(false);
             vPrincipal.jmi_compra.setVisible(false);
-            vPrincipal.jmi_detalleCompra.setVisible(false);
         }
         vLogin.jtf_usuario.setText("");
         vLogin.jpass_contraseña.setText("");

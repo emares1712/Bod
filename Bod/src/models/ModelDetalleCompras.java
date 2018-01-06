@@ -46,7 +46,7 @@ public class ModelDetalleCompras {
     
     private void Connect(){
         try{
-            sql_connection = DriverManager.getConnection("jdbc:mysql://localhost/Bodega","root","1234");
+            sql_connection = DriverManager.getConnection("jdbc:mysql://localhost/Bodega","root","");
             sql_st = sql_connection.createStatement();
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null, "Error 101: No hay conexión con la base de datos: " + e);
@@ -72,7 +72,7 @@ public class ModelDetalleCompras {
             precio_unitario = sql_rs.getString("Precio_Unitario");
             total = sql_rs.getString("Total");
         }catch(SQLException e){
-            JOptionPane.showMessageDialog(null, "Error 103: Asignado de valores del cliente: " + e);
+            JOptionPane.showMessageDialog(null, "Error 103: Asignado de valores del detalle: " + e);
         }
     }
     public void InsertarDetalle_Compra(){
